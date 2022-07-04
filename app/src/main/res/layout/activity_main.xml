@@ -157,7 +157,7 @@
             tools:ignore="MissingConstraints" />
 
         <ImageButton
-            android:id="@+id/multiply"
+            android:id="@+id/mult"
             android:layout_width="@dimen/default_numberSize"
             android:layout_height="@dimen/default_numberSize"
             android:background="@color/backgroundOfNumbers"
@@ -174,7 +174,7 @@
             android:background="@color/backgroundOfNumbers"
             android:scaleType="fitStart"
             android:src="@drawable/div"
-            app:layout_constraintStart_toEndOf="@+id/multiply"
+            app:layout_constraintStart_toEndOf="@+id/mult"
             app:layout_constraintTop_toBottomOf="@+id/n9"
             tools:ignore="MissingConstraints" />
 
