@@ -22,6 +22,51 @@
       android:layout_width="match_parent"
       android:layout_height="220dp"
       tools:ignore="MissingConstraints" />
+  <View
+      android:id="@+id/v2"
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      tools:ignore="MissingConstraints" />
+
+  <TextView
+      android:id="@+id/numberField"
+      android:layout_width="250dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="130dp"
+      android:layout_marginStart="5dp"
+      android:text="12345780"
+      android:textAlignment="textEnd"
+      android:textColor="@color/black"
+
+      android:textSize="50sp"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="MissingConstraints" />
+
+  <ImageButton
+      android:id="@+id/dot"
+      android:layout_width="@dimen/df_dotWidth"
+      android:layout_height="@dimen/df_numberSize"
+      android:background="@color/backgroundOfNumbers"
+      android:scaleType="fitStart"
+      android:src="@drawable/dot"
+      app:layout_constraintStart_toEndOf="@+id/numberField"
+      app:layout_constraintTop_toTopOf="@+id/numberField"
+      android:layout_marginTop="9dp"
+      tools:ignore="MissingConstraints" />
+  <ImageButton
+      android:id="@+id/bs"
+      android:layout_width="@dimen/df_dotWidth"
+      android:layout_height="@dimen/df_numberSize"
+      android:background="@color/backgroundOfNumbers"
+      android:scaleType="fitStart"
+      android:src="@drawable/img_bs"
+      app:layout_constraintStart_toEndOf="@+id/dot"
+      app:layout_constraintTop_toTopOf="@+id/numberField"
+      android:layout_marginTop="9dp"
+      tools:ignore="MissingConstraints" />
+
+
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
