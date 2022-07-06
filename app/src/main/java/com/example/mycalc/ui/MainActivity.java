@@ -1,5 +1,6 @@
 package com.example.mycalc.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.Configuration;
@@ -15,10 +16,9 @@ import com.example.mycalc.model.Operator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements CalculatorView{
+public class MainActivity extends AppCompatActivity implements CalculatorView {
 
     private TextView resultTxt;
-
 
     private CalculatorPresenter presenter;
 
@@ -30,22 +30,24 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
         } else {
             setContentView(R.layout.activity_main);
         }
-
         resultTxt = findViewById(R.id.numberField);
-
         presenter = new CalculatorPresenter(this, new CalculatorImpl());
 
+        if (savedInstanceState != null) {
+            presenter.restoreState(savedInstanceState);
+        }
+
         Map<Integer, Integer> digits = new HashMap<>();
-        digits.put(R.id.n1,1);
-        digits.put(R.id.n2,2);
-        digits.put(R.id.n3,3);
-        digits.put(R.id.n4,4);
-        digits.put(R.id.n5,5);
-        digits.put(R.id.n6,6);
-        digits.put(R.id.n7,7);
-        digits.put(R.id.n8,8);
-        digits.put(R.id.n9,9);
-        digits.put(R.id.n0,0);
+        digits.put(R.id.n1, 1);
+        digits.put(R.id.n2, 2);
+        digits.put(R.id.n3, 3);
+        digits.put(R.id.n4, 4);
+        digits.put(R.id.n5, 5);
+        digits.put(R.id.n6, 6);
+        digits.put(R.id.n7, 7);
+        digits.put(R.id.n8, 8);
+        digits.put(R.id.n9, 9);
+        digits.put(R.id.n0, 0);
 
         View.OnClickListener digitClickListener = new View.OnClickListener() {
             @Override
@@ -111,8 +113,6 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
         });
     }
 
-
-
     @Override
     public void showResult(String result) {
         resultTxt.setText(result);
@@ -122,15 +122,20 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
     public void setActiveOperator(Operator operator, boolean active) {
         View view;
         switch (operator) {
-            case ADD: view = findViewById(R.id.plus);
-                      break;
-            case SUB: view = findViewById(R.id.minus);
+            case ADD:
+                view = findViewById(R.id.plus);
                 break;
-            case MULT: view = findViewById(R.id.mult);
+            case SUB:
+                view = findViewById(R.id.minus);
                 break;
-            case DIV: view = findViewById(R.id.divide);
+            case MULT:
+                view = findViewById(R.id.mult);
                 break;
-            default: view = null;
+            case DIV:
+                view = findViewById(R.id.divide);
+                break;
+            default:
+                view = null;
         }
         if (active) {
             view.setBackgroundResource(R.color.activeBackground);
@@ -140,4 +145,15 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
 
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        presenter.saveState(outState);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        presenter.restoreState(savedInstanceState);
+    }
 }

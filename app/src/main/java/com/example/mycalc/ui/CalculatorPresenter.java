@@ -1,5 +1,7 @@
 package com.example.mycalc.ui;
 
+import android.os.Bundle;
+
 import com.example.mycalc.model.Calculator;
 import com.example.mycalc.model.Operator;
 
@@ -20,6 +22,11 @@ public class CalculatorPresenter {
         this.calculator = calculator;
         dotCounter = -1;
 
+    }
+
+    public CalculatorPresenter(CalculatorView view, Calculator calculator, Bundle inState) {
+        this.view = view;
+        this.calculator = calculator;
     }
 
     public void onDigitPressed(int digit) {
@@ -101,5 +108,30 @@ public class CalculatorPresenter {
             view.showResult(myFormat.format(value));
         }
 
+    }
+
+    public void saveState(Bundle outState) {
+        outState.putDouble("prevArg",    prevArg);
+        outState.putDouble("currentArg", currentArg);
+        if (selectedOperator == null) {
+            outState.putInt("selectedOperator", -1);
+        } else {
+            outState.putInt("selectedOperator", selectedOperator.ordinal());
+        }
+        outState.putInt("dotCounter", dotCounter);
+    }
+
+    public void restoreState(Bundle inState) {
+        prevArg = inState.getDouble("prevArg");
+        currentArg = inState.getDouble("currentArg");
+        int sO = inState.getInt("selectedOperator");
+        if (sO == -1) {
+            selectedOperator = null;
+        } else {
+            selectedOperator = Operator.values()[sO];
+            view.setActiveOperator(selectedOperator, true);
+        }
+        dotCounter = inState.getInt("dotCounter");
+        showValue(currentArg);
     }
 }
