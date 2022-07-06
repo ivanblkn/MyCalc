@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="df_numberSize">68dp</dimen>
+    <dimen name="df_dotWidth">40dp</dimen>
+</resources>
