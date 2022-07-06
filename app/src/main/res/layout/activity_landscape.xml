@@ -12,8 +12,9 @@
       android:layout_width="match_parent"
       android:layout_height="550dp"
       android:contentDescription="@string/background"
+      android:layout_marginStart="15dp"
       android:scaleType="fitStart"
-      android:src="@drawable/backgound"
+      android:src="@drawable/backgroung_ls"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,6 +86,60 @@
       app:layout_constraintTop_toTopOf="@+id/numberField"
       tools:ignore="MissingConstraints" />
 
+  <ImageButton
+      android:id="@+id/plus"
+      android:layout_width="@dimen/df_numberSize"
+      android:layout_height="@dimen/df_numberSize"
+      android:background="@color/backgroundOfNumbers"
+      android:scaleType="fitStart"
+      android:src="@drawable/pls"
+      app:layout_constraintStart_toEndOf="@+id/key_c"
+      app:layout_constraintTop_toTopOf="@+id/numberField"
+      tools:ignore="MissingConstraints" />
+
+  <ImageButton
+      android:id="@+id/minus"
+      android:layout_width="@dimen/df_numberSize"
+      android:layout_height="@dimen/df_numberSize"
+      android:background="@color/backgroundOfNumbers"
+      android:scaleType="fitStart"
+      android:src="@drawable/mns"
+      app:layout_constraintStart_toEndOf="@+id/plus"
+      app:layout_constraintTop_toTopOf="@+id/numberField"
+      tools:ignore="MissingConstraints" />
+
+  <ImageButton
+      android:id="@+id/mult"
+      android:layout_width="@dimen/df_numberSize"
+      android:layout_height="@dimen/df_numberSize"
+      android:background="@color/backgroundOfNumbers"
+      android:scaleType="fitStart"
+      android:src="@drawable/mlt"
+      app:layout_constraintStart_toEndOf="@+id/minus"
+      app:layout_constraintTop_toTopOf="@+id/numberField"
+      tools:ignore="MissingConstraints" />
+
+  <ImageButton
+      android:id="@+id/divide"
+      android:layout_width="@dimen/df_numberSize"
+      android:layout_height="@dimen/df_numberSize"
+      android:background="@color/backgroundOfNumbers"
+      android:scaleType="fitStart"
+      android:src="@drawable/div"
+      app:layout_constraintStart_toEndOf="@+id/mult"
+      app:layout_constraintTop_toTopOf="@+id/numberField"
+      tools:ignore="MissingConstraints" />
+
+  <ImageButton
+      android:id="@+id/equals"
+      android:layout_width="@dimen/df_numberSize"
+      android:layout_height="@dimen/df_numberSize"
+      android:background="@color/backgroundOfNumbers"
+      android:scaleType="fitStart"
+      android:src="@drawable/eql"
+      app:layout_constraintStart_toEndOf="@+id/divide"
+      app:layout_constraintTop_toTopOf="@+id/numberField"
+      tools:ignore="MissingConstraints" />
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -151,8 +206,8 @@
         android:background="@color/backgroundOfNumbers"
         android:scaleType="fitStart"
         android:src="@drawable/img_6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/n1"
+        app:layout_constraintStart_toEndOf="@+id/n5"
+        app:layout_constraintTop_toTopOf="@+id/n1"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
@@ -163,7 +218,7 @@
         android:scaleType="fitStart"
         android:src="@drawable/img_7"
         app:layout_constraintStart_toEndOf="@+id/n6"
-        app:layout_constraintTop_toBottomOf="@+id/n2"
+        app:layout_constraintTop_toTopOf="@+id/n1"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
@@ -174,7 +229,7 @@
         android:scaleType="fitStart"
         android:src="@drawable/img_8"
         app:layout_constraintStart_toEndOf="@+id/n7"
-        app:layout_constraintTop_toBottomOf="@+id/n3"
+        app:layout_constraintTop_toTopOf="@+id/n1"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
@@ -185,7 +240,7 @@
         android:scaleType="fitStart"
         android:src="@drawable/img_9"
         app:layout_constraintStart_toEndOf="@+id/n8"
-        app:layout_constraintTop_toBottomOf="@+id/n4"
+        app:layout_constraintTop_toTopOf="@+id/n1"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
@@ -196,63 +251,9 @@
         android:scaleType="fitStart"
         android:src="@drawable/img_0"
         app:layout_constraintStart_toEndOf="@+id/n9"
-        app:layout_constraintTop_toBottomOf="@+id/n5"
+        app:layout_constraintTop_toTopOf="@+id/n1"
         tools:ignore="MissingConstraints" />
 
-    <ImageButton
-        android:id="@+id/plus"
-        android:layout_width="@dimen/df_numberSize"
-        android:layout_height="@dimen/df_numberSize"
-        android:background="@color/backgroundOfNumbers"
-        android:scaleType="fitStart"
-        android:src="@drawable/pls"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/n6"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/minus"
-        android:layout_width="@dimen/df_numberSize"
-        android:layout_height="@dimen/df_numberSize"
-        android:background="@color/backgroundOfNumbers"
-        android:scaleType="fitStart"
-        android:src="@drawable/mns"
-        app:layout_constraintStart_toEndOf="@+id/plus"
-        app:layout_constraintTop_toBottomOf="@+id/n7"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/mult"
-        android:layout_width="@dimen/df_numberSize"
-        android:layout_height="@dimen/df_numberSize"
-        android:background="@color/backgroundOfNumbers"
-        android:scaleType="fitStart"
-        android:src="@drawable/mlt"
-        app:layout_constraintStart_toEndOf="@+id/minus"
-        app:layout_constraintTop_toBottomOf="@+id/n8"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/divide"
-        android:layout_width="@dimen/df_numberSize"
-        android:layout_height="@dimen/df_numberSize"
-        android:background="@color/backgroundOfNumbers"
-        android:scaleType="fitStart"
-        android:src="@drawable/div"
-        app:layout_constraintStart_toEndOf="@+id/mult"
-        app:layout_constraintTop_toBottomOf="@+id/n9"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/equals"
-        android:layout_width="@dimen/df_numberSize"
-        android:layout_height="@dimen/df_numberSize"
-        android:background="@color/backgroundOfNumbers"
-        android:scaleType="fitStart"
-        android:src="@drawable/eql"
-        app:layout_constraintStart_toEndOf="@+id/divide"
-        app:layout_constraintTop_toBottomOf="@+id/n0"
-        tools:ignore="MissingConstraints" />
   </androidx.constraintlayout.widget.ConstraintLayout>
 
   </androidx.constraintlayout.widget.ConstraintLayout>
