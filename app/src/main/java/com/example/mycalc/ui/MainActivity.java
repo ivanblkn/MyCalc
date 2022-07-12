@@ -26,11 +26,7 @@ public class MainActivity extends AppCompatActivity implements CalculatorView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            setContentView(R.layout.activity_landscape);
-        } else {
-            setContentView(R.layout.activity_main);
-        }
+        setContentView(R.layout.activity_main);
 
         resultTxt = findViewById(R.id.numberField);
         presenter = new CalculatorPresenter(this, new CalculatorImpl());
