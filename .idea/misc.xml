@@ -3,11 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2605" />
-        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2605" />
-        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/drawable/img_bg.xml" value="0.2605" />
-        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/layout/activity_landscape.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/drawable/ic_launcher_background.xml" value="0.288" />
+        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/layout-land/activity_main.xml" value="0.30599647266313934" />
+        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/layout/activity_landscape.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/belki/AndroidStudioProjects/MyCalc/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
       </map>
     </option>
   </component>

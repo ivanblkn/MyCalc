@@ -2,4 +2,13 @@
 <resources>
     <dimen name="df_numberSize">68dp</dimen>
     <dimen name="df_dotWidth">40dp</dimen>
+    <dimen name="btn_Size">85sp</dimen>
+    <dimen name="db_image_lh">550dp</dimen>
+    <dimen name="db_image_ms">15dp</dimen>
+    <dimen name="v1_lh">220dp</dimen>
+    <dimen name="v2_lh">100dp</dimen>
+    <dimen name="numberField_lw">240dp</dimen>
+    <dimen name="numberField_mt">130dp</dimen>
+    <dimen name="numberField_ms">5dp</dimen>
+    <dimen name="numberField_ts">40sp</dimen>
 </resources>
