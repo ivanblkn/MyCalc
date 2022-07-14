@@ -19,5 +19,9 @@
     <string name="key_dot">,</string>
     <string name="key_bs">&lt;</string>
     <string name="key_c">c</string>
+    <string name="theme">theme</string>
+    <string name="themeSimple">Simple theme</string>
+    <string name="themeFrame">Frame theme</string>
+    <string name="themeShadow">Shadow theme</string>
 
 </resources>

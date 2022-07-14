@@ -10,4 +10,19 @@
         <item name="android:includeFontPadding">false</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
     </style>
+    <style name="ThemeButton" parent="CalcButton">
+        <item name="android:textSize">@dimen/btn_theme_Size</item>
+    </style>
+
+    <style name="CalcButtonFrame"  parent="CalcButton">
+        <item name="android:background">@drawable/rectangle</item>
+    </style>
+
+    <style name="CalcButtonShadow" parent="CalcButton">
+        <item name="android:shadowColor">@color/shadow</item>
+        <item name="android:shadowDx">@dimen/shadowD</item>
+        <item name="android:shadowDy">@dimen/shadowD</item>
+        <item name="android:shadowRadius">@dimen/shadowRadius</item>
+    </style>
+
 </resources>
