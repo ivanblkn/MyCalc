@@ -9,7 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="backgroundOfNumbers">#00FFFFFF</color>
     <color name="activeBackground">#50FF0000</color>
-    <color name="frameColor">#FF0000</color>
-    <color name="shadow">#FF000000</color>
+    <color name="frameColor">#FFEB3B</color>
+    <color name="shadow">#FFEB3B</color>
     <color name="checkColor">#FFFFFF</color>
+
 </resources>

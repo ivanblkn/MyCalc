@@ -2,4 +2,19 @@
 <resources>
     <dimen name="df_numberSize">68dp</dimen>
     <dimen name="df_dotWidth">40dp</dimen>
+    <dimen name="btn_Size">85sp</dimen>
+    <dimen name="btn_theme_Size">50sp</dimen>
+    <dimen name="db_image_lh">550dp</dimen>
+    <dimen name="db_image_ms">15dp</dimen>
+    <dimen name="v1_lh">220dp</dimen>
+    <dimen name="v2_lh">100dp</dimen>
+    <dimen name="numberField_lw">240dp</dimen>
+    <dimen name="numberField_mt">130dp</dimen>
+    <dimen name="numberField_ms">5dp</dimen>
+    <dimen name="numberField_ts">40sp</dimen>
+    <dimen name="shadowD">20</dimen>
+    <dimen name="shadowRadius">20</dimen>
+    <dimen name="default_padding">10dp</dimen>
+    <dimen name="title_size">50dp</dimen>
+    <dimen name="card_ItemSize">35sp</dimen>
 </resources>

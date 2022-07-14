@@ -1,17 +1,24 @@
 package com.example.mycalc.ui;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.Configuration;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mycalc.R;
 import com.example.mycalc.model.CalculatorImpl;
 import com.example.mycalc.model.Operator;
+import com.example.mycalc.model.Theme;
+import com.example.mycalc.model.ThemeRepository;
+import com.example.mycalc.model.ThemeRepositoryImpl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,15 +29,17 @@ public class MainActivity extends AppCompatActivity implements CalculatorView {
 
     private CalculatorPresenter presenter;
 
+    private ThemeRepository themeRepository;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            setContentView(R.layout.activity_landscape);
-        } else {
-            setContentView(R.layout.activity_main);
-        }
+        themeRepository = ThemeRepositoryImpl.getInstance(this);
+
+        setTheme(themeRepository.getSavedTheme().getThemeRes());
+
+        setContentView(R.layout.activity_main);
 
         resultTxt = findViewById(R.id.numberField);
         presenter = new CalculatorPresenter(this, new CalculatorImpl());
@@ -111,6 +120,29 @@ public class MainActivity extends AppCompatActivity implements CalculatorView {
             @Override
             public void onClick(View view) {
                 presenter.onEqualsPressed();
+            }
+        });
+
+        ActivityResultLauncher<Intent> themeLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intent = result.getData();
+
+                    Theme selectedTheme = (Theme)intent.getSerializableExtra(SelectThemeActivity.EXTRA_THEM);
+
+                    themeRepository.saveTheme(selectedTheme);
+
+                    recreate();
+                }
+            }
+        });
+        findViewById(R.id.btn_theme).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SelectThemeActivity.class);
+                intent.putExtra(SelectThemeActivity.EXTRA_THEM, themeRepository.getSavedTheme());
+                themeLauncher.launch(intent);
             }
         });
     }

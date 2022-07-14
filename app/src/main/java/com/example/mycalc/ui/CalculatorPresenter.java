@@ -101,13 +101,16 @@ public class CalculatorPresenter {
     }
 
     public void showValue(double value) {
-        String s = myFormat.format(value);
-        if (s.length()>11) {
-            view.showResult(myFormat.format(value).substring(0, 11));
+        if (value == 0) {
+            view.showResult("");
         } else {
-            view.showResult(myFormat.format(value));
+            String s = myFormat.format(value);
+            if (s.length() > 11) {
+                view.showResult(myFormat.format(value).substring(0, 11));
+            } else {
+                view.showResult(myFormat.format(value));
+            }
         }
-
     }
 
     public void saveState(Bundle outState) {

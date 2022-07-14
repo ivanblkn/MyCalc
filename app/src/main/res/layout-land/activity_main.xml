@@ -9,58 +9,38 @@
     <ImageView
         android:id="@+id/bg"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="@dimen/db_image_lh"
+        android:layout_marginStart="@dimen/db_image_ms"
         android:contentDescription="@string/background"
         android:scaleType="fitStart"
-        android:src="@drawable/backgound"
+        android:src="@drawable/backgroung_ls"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/v1"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        tools:ignore="MissingConstraints" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_theme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/theme"
-        style="@style/ThemeButton"
-        app:layout_constraintEnd_toEndOf="@+id/key_c"
-        app:layout_constraintBottom_toTopOf="@+id/key_c"
+        android:layout_height="@dimen/v1_lh"
         tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/v2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/v2_lh"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/numberField"
-        android:layout_width="240dp"
+        android:layout_width="@dimen/numberField_lw"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginStart="@dimen/numberField_ms"
+        android:layout_marginTop="@dimen/numberField_mt"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="@dimen/numberField_ts"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/numberPrev"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="textEnd"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/numberField"
-        app:layout_constraintRight_toRightOf="@id/numberField"
-        tools:ignore="MissingConstraints" />
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/dot"
@@ -89,6 +69,50 @@
         app:layout_constraintTop_toTopOf="@+id/numberField"
         tools:ignore="MissingConstraints" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/plus"
+        android:layout_width="@dimen/df_numberSize"
+        android:layout_height="@dimen/df_numberSize"
+        android:text="@string/key_pls"
+        app:layout_constraintStart_toEndOf="@+id/key_c"
+        app:layout_constraintTop_toTopOf="@+id/numberField"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/minus"
+        android:layout_width="@dimen/df_numberSize"
+        android:layout_height="@dimen/df_numberSize"
+        android:text="@string/key_mns"
+        app:layout_constraintStart_toEndOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="@+id/numberField"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mult"
+        android:layout_width="@dimen/df_numberSize"
+        android:layout_height="@dimen/df_numberSize"
+        android:text="@string/key_mlt"
+        app:layout_constraintStart_toEndOf="@+id/minus"
+        app:layout_constraintTop_toTopOf="@+id/numberField"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/divide"
+        android:layout_width="@dimen/df_numberSize"
+        android:layout_height="@dimen/df_numberSize"
+        android:text="@string/key_div"
+        app:layout_constraintStart_toEndOf="@+id/mult"
+        app:layout_constraintTop_toTopOf="@+id/numberField"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/equals"
+        android:layout_width="@dimen/df_numberSize"
+        android:layout_height="@dimen/df_numberSize"
+        android:text="@string/key_eql"
+        app:layout_constraintStart_toEndOf="@+id/divide"
+        app:layout_constraintTop_toTopOf="@+id/numberField"
+        tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -103,7 +127,8 @@
             android:layout_height="@dimen/df_numberSize"
             android:text="@string/key_1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/n2"
@@ -142,8 +167,8 @@
             android:layout_width="@dimen/df_numberSize"
             android:layout_height="@dimen/df_numberSize"
             android:text="@string/key_6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/n1"
+            app:layout_constraintStart_toEndOf="@+id/n5"
+            app:layout_constraintTop_toTopOf="@+id/n1"
             tools:ignore="MissingConstraints" />
 
         <com.google.android.material.button.MaterialButton
@@ -152,7 +177,7 @@
             android:layout_height="@dimen/df_numberSize"
             android:text="@string/key_7"
             app:layout_constraintStart_toEndOf="@+id/n6"
-            app:layout_constraintTop_toBottomOf="@+id/n2"
+            app:layout_constraintTop_toTopOf="@+id/n1"
             tools:ignore="MissingConstraints" />
 
         <com.google.android.material.button.MaterialButton
@@ -161,7 +186,7 @@
             android:layout_height="@dimen/df_numberSize"
             android:text="@string/key_8"
             app:layout_constraintStart_toEndOf="@+id/n7"
-            app:layout_constraintTop_toBottomOf="@+id/n3"
+            app:layout_constraintTop_toTopOf="@+id/n1"
             tools:ignore="MissingConstraints" />
 
         <com.google.android.material.button.MaterialButton
@@ -170,7 +195,7 @@
             android:layout_height="@dimen/df_numberSize"
             android:text="@string/key_9"
             app:layout_constraintStart_toEndOf="@+id/n8"
-            app:layout_constraintTop_toBottomOf="@+id/n4"
+            app:layout_constraintTop_toTopOf="@+id/n1"
             tools:ignore="MissingConstraints" />
 
         <com.google.android.material.button.MaterialButton
@@ -179,53 +204,9 @@
             android:layout_height="@dimen/df_numberSize"
             android:text="@string/key_0"
             app:layout_constraintStart_toEndOf="@+id/n9"
-            app:layout_constraintTop_toBottomOf="@+id/n5"
+            app:layout_constraintTop_toTopOf="@+id/n1"
             tools:ignore="MissingConstraints" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/plus"
-            android:layout_width="@dimen/df_numberSize"
-            android:layout_height="@dimen/df_numberSize"
-            android:text="@string/key_pls"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/n6"
-            tools:ignore="MissingConstraints" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/minus"
-            android:layout_width="@dimen/df_numberSize"
-            android:layout_height="@dimen/df_numberSize"
-            android:text="@string/key_mns"
-            app:layout_constraintStart_toEndOf="@+id/plus"
-            app:layout_constraintTop_toBottomOf="@+id/n7"
-            tools:ignore="MissingConstraints" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mult"
-            android:layout_width="@dimen/df_numberSize"
-            android:layout_height="@dimen/df_numberSize"
-            android:text="@string/key_mlt"
-            app:layout_constraintStart_toEndOf="@+id/minus"
-            app:layout_constraintTop_toBottomOf="@+id/n8"
-            tools:ignore="MissingConstraints" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/divide"
-            android:layout_width="@dimen/df_numberSize"
-            android:layout_height="@dimen/df_numberSize"
-            android:text="@string/key_div"
-            app:layout_constraintStart_toEndOf="@+id/mult"
-            app:layout_constraintTop_toBottomOf="@+id/n9"
-            tools:ignore="MissingConstraints" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/equals"
-            android:layout_width="@dimen/df_numberSize"
-            android:layout_height="@dimen/df_numberSize"
-            android:text="@string/key_eql"
-            app:layout_constraintStart_toEndOf="@+id/divide"
-            app:layout_constraintTop_toBottomOf="@+id/n0"
-            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
